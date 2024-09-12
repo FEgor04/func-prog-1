@@ -1,0 +1,5 @@
+(library
+ (name module)
+ (inline_tests)
+ (preprocess
+  (pps ppx_inline_test)))
