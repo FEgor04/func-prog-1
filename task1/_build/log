@@ -1,0 +1,6 @@
+# dune init project task1
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Shared cache location: /Users/egor.fedorov/.cache/dune/db
+# Workspace root: /Users/egor.fedorov/Projects/func-prog/func-prog-1/task1
+# Auto-detected concurrency: 11

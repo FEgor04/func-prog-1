@@ -1,4 +1,0 @@
-(executable
- (public_name monolith_rec)
- (name main)
- (libraries monolith_rec))
