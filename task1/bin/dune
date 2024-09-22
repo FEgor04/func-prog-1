@@ -1,7 +1,5 @@
 (executable
- (public_name rec)
- (name rec))
-
-(executable
- (public_name tailrec)
- (name tailrec))
+ (public_name task1)
+ (name task1)
+ (libraries rec tailrec)
+ )

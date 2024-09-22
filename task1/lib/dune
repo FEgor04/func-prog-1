@@ -1,0 +1,7 @@
+(library
+ (name rec)
+ (modules Rec))
+
+(library
+ (name tailrec)
+ (modules Tailrec))
