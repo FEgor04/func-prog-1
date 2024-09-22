@@ -1,7 +1,13 @@
 (library
  (name rec)
- (modules Rec))
+ (modules Rec)
+ (inline_tests)
+ (preprocess
+  (pps ppx_inline_test)))
 
 (library
  (name tailrec)
- (modules Tailrec))
+ (modules Tailrec)
+ (inline_tests)
+ (preprocess
+  (pps ppx_inline_test)))
