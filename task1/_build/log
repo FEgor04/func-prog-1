@@ -1,6 +1,16 @@
-# dune init project task1
+# dune exec rec
 # OCAMLPARAM: unset
 # Shared cache: disabled
 # Shared cache location: /Users/egor.fedorov/.cache/dune/db
 # Workspace root: /Users/egor.fedorov/Projects/func-prog/func-prog-1/task1
 # Auto-detected concurrency: 11
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /Users/egor.fedorov/.opam/default/bin/ocamlc.opt -config > /var/folders/yf/f7dxzqm14xb5h9_m_2bx3jqw0000gn/T/dune_d59d31_output

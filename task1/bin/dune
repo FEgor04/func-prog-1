@@ -1,4 +1,4 @@
 (executable
- (public_name task1)
- (name main)
- (libraries task1))
+ (public_name rec)
+ (name rec)
+ )
