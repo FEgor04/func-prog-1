@@ -25,3 +25,10 @@
  (inline_tests)
  (preprocess
   (pps ppx_inline_test)))
+
+(library
+ (name imperative)
+ (modules Imperative)
+ (inline_tests)
+ (preprocess
+  (pps ppx_inline_test)))
