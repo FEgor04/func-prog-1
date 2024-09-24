@@ -21,7 +21,7 @@ let%test _ = is_good 8208 4
 let%test _ = is_good 9474 4
 
 let sum_less_than x power =
-  List.init (x - 1) (fun x -> x + 1)
+  List.init (x - 1) (fun x -> x + 2)
   |> List.filter (fun x -> is_good x power)
   |> List.fold_left ( + ) 0
 
