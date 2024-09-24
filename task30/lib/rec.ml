@@ -20,9 +20,10 @@ let%test _ = is_good 1634 4
 let%test _ = is_good 8208 4
 let%test _ = is_good 9474 4
 
-let rec sum_less_than x power =
-  if x > 1 then sum_less_than (x - 1) power + if is_good x power then x else 0
-  else 0
+let sum_less_than x power =
+  List.init (x-1) (fun x -> x + 1)
+  |> List.filter (fun x -> is_good x power)
+  |> List.fold_left (+) 0
 
 let sum power = sum_less_than (pow 9 power * power) power
 let%test _ = sum 4 == 19316
