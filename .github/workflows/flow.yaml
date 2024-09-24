@@ -1,0 +1,30 @@
+name: Build, test, lint
+
+on:
+  - push
+  - pull_request
+
+permissions: read-all
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout tree
+        uses: actions/checkout@v4
+
+      - name: Set-up OCaml
+        uses: ocaml/setup-ocaml@v3
+        with:
+          ocaml-compiler: 5
+
+      - run: opam install . --deps-only --with-test
+      - run: opam install zanuda
+
+      - run: opam exec -- dune build @check @runtest -j3
+      - run: opam exec -- dune runtest
+      - run: opam exec -- zanuda -no-top_file_license -no-check-filesystem -dir .
