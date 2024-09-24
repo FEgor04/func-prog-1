@@ -7,11 +7,39 @@ on:
 permissions: read-all
 
 jobs:
-  build:
+  task1:
     strategy:
       fail-fast: false
 
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./task1
+
+    steps:
+      - name: Checkout tree
+        uses: actions/checkout@v4
+
+      - name: Set-up OCaml
+        uses: ocaml/setup-ocaml@v3
+        with:
+          ocaml-compiler: 4.14
+
+      - run: opam install . --deps-only --with-test
+      - run: opam install zanuda
+
+      - run: opam exec -- dune build @check @runtest -j3
+      - run: opam exec -- dune runtest
+      - run: opam exec -- zanuda -no-top_file_license -no-check-filesystem -dir .
+
+  task30:
+    strategy:
+      fail-fast: false
+
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./task30
 
     steps:
       - name: Checkout tree
