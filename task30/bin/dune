@@ -1,0 +1,4 @@
+(executable
+ (public_name task30)
+ (name task30)
+ (libraries rec tailrec modulish map imperative))
