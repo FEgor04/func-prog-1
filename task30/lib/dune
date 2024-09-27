@@ -1,27 +1,27 @@
 (library
  (name rec)
  (modules Rec)
- (inline_tests)
+ (inline_tests (flags (-verbose)))
  (preprocess
   (pps ppx_inline_test)))
 
 (library
  (name tailrec)
  (modules Tailrec)
- (inline_tests)
+ (inline_tests (flags (-verbose)))
  (preprocess
   (pps ppx_inline_test)))
 
 (library
  (name modulish)
  (modules Modulish)
- (inline_tests)
+ (inline_tests (flags (-verbose)))
  (preprocess
   (pps ppx_inline_test)))
 
 (library
  (name imperative)
  (modules Imperative)
- (inline_tests)
+ (inline_tests (flags (-verbose)))
  (preprocess
   (pps ppx_inline_test)))
