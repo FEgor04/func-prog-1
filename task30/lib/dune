@@ -29,3 +29,11 @@
   (flags (-verbose)))
  (preprocess
   (pps ppx_inline_test)))
+
+(library
+ (name infinite)
+ (modules infinite)
+ (inline_tests
+  (flags (-verbose)))
+ (preprocess
+  (pps ppx_inline_test)))
