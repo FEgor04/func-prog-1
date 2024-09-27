@@ -14,13 +14,9 @@ let rec sum_of_powers xs power =
 let is_good power x = sum_of_powers (number_to_digits x) power == x
 let can_be_good power x = x < pow 9 power * power
 
-let rec potentially_good_numbers power x () =
-  if can_be_good power x then
-    Seq.Cons (x, potentially_good_numbers power (x + 1))
-  else Seq.Nil
-
 let good_numbers power =
-  potentially_good_numbers power 2 |> Seq.filter (is_good power)
+  Seq.unfold (fun x -> if can_be_good power x then Some (x, x + 1) else None) 2
+  |> Seq.filter (is_good power)
 
 let sum power = good_numbers power |> Seq.fold_left ( + ) 0
 let%test _ = sum 4 == 19316
