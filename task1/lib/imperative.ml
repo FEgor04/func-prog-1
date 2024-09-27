@@ -8,6 +8,7 @@ let sum_3_5 n =
     answer := !answer + if is_good i then i else 0
   done;
   !answer
+;;
 
 let%test _ = sum_3_5 9 = 23
 let%test _ = sum_3_5 999 = 233168
