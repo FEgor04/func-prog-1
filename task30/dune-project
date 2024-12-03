@@ -19,7 +19,7 @@
  (name task30)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml dune)
+ (depends ocaml dune ppx_inline_test ocamlformat)
  (tags
   (topics "to describe" your project)))
 
